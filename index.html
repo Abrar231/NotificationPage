@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Notifications page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 10px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .flex{
+      display: flex;
+      justify-content: space-between;
+    }
+    .blue{
+      background-color: hsl(219, 85%, 26%);
+      color: white;
+      padding: 0 7px;
+      border-radius: 5px;
+    }
+    .h-10{
+      height: 10vh;
+    }
+    .fw-800{
+      font-weight: 800;
+    }
+    .fw-500{
+      font-weight: 500;
+    }
+    .unseen{
+      background-color: hsl(210, 60%, 98%);
+    }
+    .notif{
+      display: flex;
+      font-size: 16px;
+    }
+    .m0{
+      margin: 0;
+    }
+    .name{
+      text-decoration: none;
+      color: black;
+      font-weight: 800 ;
+    }
+    .c-boldblack{
+      font-weight: 800 ;
+    }
+    .msg1{
+      color: hsl(219, 12%, 42%);
+    }
+    .msg2{
+      text-decoration: none;
+      color: hsl(219, 12%, 42%);
+      font-weight: 800 ;
+    }
+    .line-2{
+      color: hsl(219, 14%, 63%);
+    }
+    .mark{
+      background-color: rgb(240, 100, 7);
+      height: 8px;
+      width: 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .box{
+      width: 750px;
+      margin: auto;
+    }
+    @media only screen and (max-width: 750px){
+      .box{
+        width: 100vw;
+        margin: auto;
+      }
+    }
+    
+    .post{
+      text-decoration: none;
+      color: hsl(219, 85%, 26%);
+      font-weight: 800;
+    }
+    .reply{
+      color: hsl(219, 12%, 42%);
+      border: 2px solid hsl(211, 68%, 94%);
+      border-radius: 5px;
+      padding: 10px;
+      text-decoration: none;
+    }
+    .reply:hover{
+      color: hsl(219, 12%, 42%);
+      background-color: hsl(211, 68%, 94%);
+    }
+    .mark-all{
+      text-decoration: none;
+      color: grey;
+    }
+    a:hover{
+      color: hsl(219, 85%, 26%);
+    }
+    .img1{
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="flex h-10">
+      <div class="c-boldblack">
+        Notifications <span class="blue">3</span>
+      </div>
+      <a href="#" class="mark-all">Mark all as read</a>
+    </div>
+  
+    <div class="notif unseen">
+      <div class="img">
+        <img src="/assets/images/avatar-mark-webber.webp" alt="Mark Webber">
+      </div>
+      <div class="content">
+        <div class="line-1">
+          <a  href="#" class="name m0">Mark Webber</a>
+          <span class="msg1 m0"> reacted to your recent post</span>
+          <a  href="#" class="msg2 m0"> My first tournament today!</a>
+          <div class="mark m0"></div>
+        </div>
+        <div class="line-2">
+          1m ago
+        </div>
+      </div>
+      
+    </div>
+  
+    <div class="notif unseen">
+      <div class="img">
+        <img src="/assets/images/avatar-angela-gray.webp" alt="Angela Gray">
+      </div>
+      <div class="content">
+        <div class="line-1">
+          <a href="#"  class="name m0">Angela Gray</a>
+          <span class="msg1 m0"> followed you</span>
+          <div class="mark m0"></div>
+        </div>
+        <div class="line-2">
+          5m ago
+        </div>
+      </div>
+      
+    </div>
+  
+    <div class="notif unseen">
+      <div class="img">
+        <img src="/assets/images/avatar-jacob-thompson.webp" alt="Jacob Thompson">
+      </div>
+      <div class="content">
+        <div class="line-1 ">
+          <a href="#"  class="name m0">Jacob Thompson</a>
+          <span class="msg1 m0"> has joined your group</span>
+          <a href="#" class="post m0"> Chess Club</a>
+          <div class="mark m0"></div>
+        </div>
+        <div class="line-2">
+          1 day ago
+        </div>
+      </div>
+      
+    </div>
+  
+    <div class="notif">
+      <div class="img">
+        <img src="/assets/images/avatar-rizky-hasanuddin.webp" alt="Rizky Hasanuddin">
+      </div>
+      <div class="content">
+        <div class="line-1">
+          <a href="#"  class="name m0">Rizky Hasanuddin</a>
+          <span class="msg1 m0"> sent you a private message</span>
+          <a href="#" class="msg2 m0"></a>
+        </div>
+        <div class="line-2">
+          5 days ago
+        </div>
+        <a href="#" class="reply">
+          Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+          I'm already having lots of fun and improving my game.
+        </a>
+      </div>
+    </div>
+  
+    <div class="img1">
+      <a href="#"><img src="/assets/images/image-chess.webp" alt=""></a>
+    </div>
+    <div class="notif">
+      <div class="img">
+        <img src="/assets/images/avatar-kimberly-smith.webp" alt="Kimberly Smith">
+      </div>
+      <div class="content">
+        <div class="line-1">
+          <a href="#"  class="name m0">Kimberly Smith</a>
+          <span class="msg1 m0"> commented on your picture</span>
+          <a href="#" class="msg2 m0"></a>
+        </div>
+        <div class="line-2">
+          1 week ago
+        </div>
+      </div>
+      
+    </div>
+    
+  
+    <div class="notif">
+      <div class="img">
+        <img src="/assets/images/avatar-nathan-peterson.webp" alt="Nathan Peterson">
+      </div>
+      <div class="content">
+        <div class="line-1">
+          <a href="#"  class="name m0">Nathan Peterson</a>
+          <span class="msg1 m0"> reacted to your recent post</span>
+          <a href="#" class="msg2 m0"> 5 end-game strategies to increase your win rate</a>
+        </div>
+        <div class="line-2">
+          2 weeks ago
+        </div>
+      </div>
+    </div>
+  
+    <div class="notif">
+      <div class="img">
+        <img src="/assets/images/avatar-anna-kim.webp" alt="Anna Kim">
+      </div>
+      <div class="content">
+        <div class="line-1">
+          <a href="#"  class="name m0">Anna Kim</a>
+          <span class="msg1 m0"> left the group</span>
+          <a href="#" class="post m0"> Chess Club</a>
+        </div>
+        <div class="line-2">
+          2 weeks ago
+        </div>
+      </div>
+    </div>
+    
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </div>
+</body>
+</html>
